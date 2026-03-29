@@ -4,6 +4,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
+from setup import build_vectorstore
+build_vectorstore()
 
 load_dotenv()
 
