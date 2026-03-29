@@ -1,0 +1,11 @@
+langchain-community
+langchain-google-genai
+langchain-huggingface
+langchain-text-splitters
+google-generativeai
+faiss-cpu
+streamlit
+pypdf
+docx2txt
+python-dotenv
+sentence-transformers
