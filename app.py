@@ -4,11 +4,20 @@ from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
+import google.generativeai as genai
 from setup import build_vectorstore
 build_vectorstore()
 
 load_dotenv()
-
+# temporary debug - remove after fixing
+try:
+    api_key = os.getenv("GOOGLE_API_KEY")
+    genai.configure(api_key=api_key)
+    models = list(genai.list_models())
+    st.write(f"API connected. Models available: {len(models)}")
+except Exception as e:
+    st.error(f"API Error: {str(e)}")
+    st.stop()
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="BU Student Advisor",
